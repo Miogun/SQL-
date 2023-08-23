@@ -1,0 +1,26 @@
+SELECT *
+FROM book_category A INNER JOIN book B;
+# ON(A.id = B.book_category_id)
+
+# 1.INNER JOIN
+# SELECT * FROM
+# book_category A JOIN
+# (SELECT id book_id, book_category_id id, bk_name, bk_price, bk_sale
+# FROM book) B USING(id);
+
+# SELECT id book_id, book_category_id id, bk_name, bk_price, bk_sale
+# FROM book;
+
+# 2. NATURAL JOIN
+# SELECT * FROM
+# book_category A NATURAL JOIN
+# (SELECT id book_id, book_category_id id, bk_name, bk_price, bk_sale
+# FROM book) B;
+
+# SELECT id book_id, book_category_id id, bk_name, bk_price, bk_sale
+# FROM book;
+
+
+
+# SELECT B.id, bk_name, bc_name, bk_price FROM book_category A, book B
+# WHERE A.id = B.book_category_id AND bk_price >= 20000
